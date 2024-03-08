@@ -11,9 +11,16 @@
 <body>
     <h1>Cows and Bulls!</h1>
     <h2>The value to guess is:</h2>
+    <h2>from template variable:</h2>
     <h2>{{value}}</h2>
+    <h2>from js:</h2>
+    <h2 id="test-element"></h2>
     <form action="">
         <button>Randomize</button>
     </form>
+    <script>
+        let numberToGuess = '{{ value }}';
+        document.getElementById("test-element").innerHTML = numberToGuess;
+    </script>
 </body>
 </html>
