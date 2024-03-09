@@ -17,10 +17,24 @@
     <h2 id="test-element"></h2>
     <form action="">
         <button>Randomize</button>
+        <input type="text" value="1234" id="test-input">
     </form>
+    <button onclick="attempt()">Test input</button>
     <script>
         let numberToGuess = '{{ value }}';
         document.getElementById("test-element").innerHTML = numberToGuess;
+    </script>
+    <script>
+        function attempt() {
+            let inputStr = document.getElementById('test-input').value;
+            let regex = /^[0-9]{4}$/;
+            let numberToGuess = '{{ value }}';
+            console.log(inputStr);
+            if (regex.test(inputStr)){
+                return alert('OK');
+            } 
+            alert('invalid input');
+        }
     </script>
 </body>
 </html>
